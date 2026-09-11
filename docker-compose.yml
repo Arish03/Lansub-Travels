@@ -1,0 +1,58 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lansub-travel-os
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # SQLite stored on the named volume
+      DATABASE_URL: "file:/data/prod.db"
+      # Auth — CHANGE THESE in production!
+      NEXTAUTH_SECRET: "${NEXTAUTH_SECRET}"
+      NEXTAUTH_URL: "${NEXTAUTH_URL:-http://localhost:3000}"
+      NODE_ENV: "production"
+      # App branding
+      NEXT_PUBLIC_APP_NAME: "LANSUB TRAVEL OS"
+      NEXT_PUBLIC_COMPANY_NAME: "National Travels"
+      NEXT_PUBLIC_GPS_SIMULATOR: "true"
+      NEXT_PUBLIC_IOT_SIMULATOR: "true"
+      NEXT_PUBLIC_DEMO_MODE: "true"
+    volumes:
+      # Named volume — SQLite database persists here across container restarts/rebuilds
+      - lansub_db:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/auth/providers"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - lansub_net
+
+  # Optional: Nginx reverse proxy (uncomment for production with domain)
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: lansub-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  #     - /etc/letsencrypt:/etc/letsencrypt:ro
+  #   depends_on:
+  #     app:
+  #       condition: service_healthy
+  #   networks:
+  #     - lansub_net
+
+volumes:
+  lansub_db:
+    driver: local
+
+networks:
+  lansub_net:
+    driver: bridge

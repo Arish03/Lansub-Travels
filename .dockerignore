@@ -1,0 +1,38 @@
+.env
+.env.local
+.env.*.local
+
+# SQLite dev database (never bake into image)
+*.db
+dev.db
+prod.db
+
+# Dependencies
+node_modules/
+
+# Next.js build outputs
+.next/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+.next_dev.log
+
+# IDE
+.vscode/
+.idea/
+
+# Tests
+coverage/
+__tests__/
+
+# Prisma migrations (keep schema, not migrations for SQLite)
+prisma/migrations/

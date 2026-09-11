@@ -1,0 +1,1140 @@
+
+> lansub-travel-os@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.2:3000
+- Environments: .env
+✓ Ready in 304ms
+⚠ Warning: Next.js ignored package-lock.json in /Users/karthik because it would include your home directory (/Users/karthik).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 82ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+⨯ Error: The edge runtime does not support Node.js 'fs' module.
+Learn More: https://nextjs.org/docs/messages/node-module-in-edge-runtime
+    at ignore-listed frames
+✓ Compiled in 29ms
+Error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [2m[at onInvalidCandidate (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:21:1682)][0m
+    [2m[at Oe (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:16:39796)][0m
+    [2m[at /Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:21:711][0m
+    [2m[at ai (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:5:1775)][0m
+    [2m[at O (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:5:1377)][0m
+    [2m[at Pe (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:21:172)][0m
+    [2m[at On (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:38:294)][0m
+    [2m[at process.processTicksAndRejections (node:internal/process/task_queues:95:5)][0m
+    [2m[at async _n (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/tailwindcss/dist/lib.js:38:631)][0m
+    [2m[at async an (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/@tailwindcss/node/dist/index.js:10:3415)][0m
+⨯ ./src/app/globals.css
+Error: Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/src/app/globals.css:1:1: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at error (turbopack:///[project]/node_modules/postcss/lib/node.js:166:32)]
+    [at Object.Once (/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/node_modules/@tailwindcss/postcss/dist/index.js:10:7013)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:299:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts?config=[project]/postcss.config.mjs:70:34)]
+    [at async run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:23)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component]
+
+
+ GET /login 500 in 1549ms (next.js: 1505ms, proxy.ts: 31ms, application-code: 13ms)
+ GET /login 200 in 195ms (next.js: 103ms, proxy.ts: 3ms, application-code: 89ms)
+ GET /api/v1/dashboard 200 in 392ms (next.js: 170ms, proxy.ts: 4ms, application-code: 217ms)
+ GET /login 200 in 207ms (next.js: 72ms, proxy.ts: 55ms, application-code: 80ms)
+ GET /api/v1/dashboard 200 in 73ms (next.js: 32ms, proxy.ts: 2ms, application-code: 38ms)
+ GET /api/v1/vehicles 200 in 265ms (next.js: 245ms, proxy.ts: 1.8ms, application-code: 18ms)
+Trips API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].trip.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__0www539._.js:86:159
+
+  83 if (status && status !== "ALL") {
+  84     where.status = status;
+  85 }
+→ 86 const trips = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].trip.findMany({
+       where: {},
+       take: 60,
+       orderBy: {
+         scheduledDeparture: "desc"
+       },
+       include: {
+         route: {
+           select: {
+             origin: true,
+             destination: true,
+             name: true,
+             ~~~~
+             distance: true,
+             duration: true,
+             baseFare: true,
+     ?       id?: true,
+     ?       companyId?: true,
+     ?       routeCode?: true,
+     ?       tollCost?: true,
+     ?       fuelEstimate?: true,
+     ?       isActive?: true,
+     ?       createdAt?: true,
+     ?       updatedAt?: true,
+     ?       company?: true,
+     ?       stops?: true,
+     ?       trips?: true,
+     ?       pricingRules?: true,
+     ?       _count?: true
+           }
+         },
+         vehicle: {
+           select: {
+             vehicleCode: true,
+             vehicleNumber: true,
+             model: true,
+             seatingCapacity: true
+           }
+         },
+         crew: {
+           include: {
+             driver: {
+               include: {
+                 employee: {
+                   select: {
+                     firstName: true,
+                     lastName: true,
+                     phone: true
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     })
+
+Unknown field `name` for select statement on model `Route`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/trips/route.ts:14:37)
+    at async GET (src/app/api/v1/trips/route.ts:14:19)
+  12 |     }
+  13 |
+> 14 |     const trips = await prisma.trip.findMany({
+     |                                     ^
+  15 |       where,
+  16 |       take: 60,
+  17 |       orderBy: { scheduledDeparture: "desc" }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/trips 500 in 179ms (next.js: 44ms, proxy.ts: 1.6ms, application-code: 133ms)
+Bookings API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].booking.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__1_w45mz._.js:87:146
+
+  84 if (channel && channel !== "ALL") where.channel = channel;
+  85 if (status && status !== "ALL") where.bookingStatus = status;
+  86 const [bookings, totalCount, channelStats] = await Promise.all([
+→ 87     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].booking.findMany({
+           where: {},
+           take: 100,
+           orderBy: {
+             createdAt: "desc"
+           },
+           include: {
+             customer: {
+               select: {
+                 name: true,
+                 phone: true,
+                 email: true
+               }
+             },
+             trip: {
+               include: {
+                 route: {
+                   select: {
+                     origin: true,
+                     destination: true
+                   }
+                 },
+                 vehicle: {
+                   select: {
+                     vehicleCode: true
+                   }
+                 }
+               }
+             },
+             passengers: {
+               select: {
+                 seatNumber: true,
+                 ~~~~~~~~~~
+                 passengerName: true,
+                 age: true,
+                 gender: true,
+         ?       id?: true,
+         ?       bookingId?: true,
+         ?       name?: true,
+         ?       idType?: true,
+         ?       idNumber?: true,
+         ?       createdAt?: true,
+         ?       booking?: true
+               }
+             }
+           }
+         })
+
+Unknown field `seatNumber` for select statement on model `BookingPassenger`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/bookings/route.ts:15:22)
+    at async GET (src/app/api/v1/bookings/route.ts:14:50)
+  13 |
+  14 |     const [bookings, totalCount, channelStats] = await Promise.all([
+> 15 |       prisma.booking.findMany({
+     |                      ^
+  16 |         where,
+  17 |         take: 100,
+  18 |         orderBy: { createdAt: "desc" }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/bookings 500 in 58ms (next.js: 38ms, proxy.ts: 1.2ms, application-code: 19ms)
+Routes API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].route.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__01946et._.js:80:161
+
+  77 ;
+  78 async function GET() {
+  79     try {
+→ 80         const routes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].route.findMany({
+               where: {
+                 isActive: true
+               },
+               include: {
+                 stops: {
+                   orderBy: {
+                     stopOrder: "asc",
+                     ~~~~~~~~~
+             ?       id?: SortOrder,
+             ?       routeId?: SortOrder,
+             ?       stopName?: SortOrder,
+             ?       stopType?: SortOrder,
+             ?       sequence?: SortOrder,
+             ?       city?: SortOrder,
+             ?       latitude?: SortOrder | SortOrderInput,
+             ?       longitude?: SortOrder | SortOrderInput,
+             ?       arrivalTime?: SortOrder | SortOrderInput,
+             ?       isActive?: SortOrder,
+             ?       createdAt?: SortOrder,
+             ?       updatedAt?: SortOrder,
+             ?       route?: RouteOrderByWithRelationInput
+                   }
+                 },
+                 _count: {
+                   select: {
+                     trips: true
+                   }
+                 }
+               }
+             })
+
+Unknown argument `stopOrder`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/routes/route.ts:6:39)
+    at async GET (src/app/api/v1/routes/route.ts:6:20)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const routes = await prisma.route.findMany({
+    |                                       ^
+  7 |       where: { isActive: true },
+  8 |       include: {
+  9 |         stops: { orderBy: { stopOrder: "asc" } }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/routes 500 in 51ms (next.js: 36ms, proxy.ts: 1.0ms, application-code: 14ms)
+Drivers API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].driver.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__162xgoi._.js:80:163
+
+  77 ;
+  78 async function GET() {
+  79     try {
+→ 80         const drivers = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].driver.findMany({
+               take: 100,
+               include: {
+                 employee: {
+                   select: {
+                     id: true,
+                     employeeCode: true,
+                     firstName: true,
+                     ~~~~~~~~~
+                     lastName: true,
+                     phone: true,
+                     email: true,
+                     status: true,
+                     branch: {
+                       select: {
+                         name: true
+                       }
+                     },
+             ?       companyId?: true,
+             ?       name?: true,
+             ?       address?: true,
+             ?       city?: true,
+             ?       dateOfBirth?: true,
+             ?       joiningDate?: true,
+             ?       department?: true,
+             ?       designation?: true,
+             ?       employeeType?: true,
+             ?       salary?: true,
+             ?       bankAccount?: true,
+             ?       ifscCode?: true,
+             ?       emergencyContact?: true,
+             ?       emergencyPhone?: true,
+             ?       createdAt?: true,
+             ?       updatedAt?: true,
+             ?       deletedAt?: true,
+             ?       company?: true,
+             ?       user?: true,
+             ?       driver?: true,
+             ?       documents?: true,
+             ?       attendances?: true,
+             ?       leaves?: true,
+             ?       _count?: true
+                   }
+                 },
+                 _count: {
+                   select: {
+                     tripCrew: true
+                   }
+                 }
+               }
+             })
+
+Unknown field `firstName` for select statement on model `Employee`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/drivers/route.ts:6:41)
+    at async GET (src/app/api/v1/drivers/route.ts:6:21)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const drivers = await prisma.driver.findMany({
+    |                                         ^
+  7 |       take: 100,
+  8 |       include: {
+  9 |         employee: { {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/drivers 500 in 70ms (next.js: 57ms, proxy.ts: 1.2ms, application-code: 12ms)
+Maintenance API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].vehicleMaintenance.aggregate()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__03f7w_r._.js:97:157
+
+  94     }
+  95 });
+  96 const [totalCost, openRepairs, scheduledServices] = await Promise.all([
+→ 97     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].vehicleMaintenance.aggregate({
+           select: {
+             _sum: {
+               select: {
+                 actualCost: true,
+                 ~~~~~~~~~~
+         ?       odometer?: true,
+         ?       nextDueKm?: true,
+         ?       cost?: true
+               }
+             }
+           }
+         })
+
+Unknown field `actualCost` for select statement on model `VehicleMaintenanceSumAggregateOutputType`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/maintenance/route.ts:16:33)
+    at async GET (src/app/api/v1/maintenance/route.ts:15:57)
+  14 |
+  15 |     const [totalCost, openRepairs, scheduledServices] = await Promise.all([
+> 16 |       prisma.vehicleMaintenance.aggregate({ _sum: { actualCost: true } }),
+     |                                 ^
+  17 |       prisma.vehicleMaintenance.count({ where: { status: "IN_PROGRESS" } }),
+  18 |       prisma.vehicleMaintenance.count({ where: { status: "SCHEDULED" } }),
+  19 |     ]); {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/maintenance 500 in 68ms (next.js: 47ms, proxy.ts: 2ms, application-code: 18ms)
+ GET /api/v1/alerts 200 in 39ms (next.js: 34ms, proxy.ts: 1.2ms, application-code: 3ms)
+Trips API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].trip.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__0www539._.js:86:159
+
+  83 if (status && status !== "ALL") {
+  84     where.status = status;
+  85 }
+→ 86 const trips = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].trip.findMany({
+       where: {},
+       take: 60,
+       orderBy: {
+         scheduledDeparture: "desc"
+       },
+       include: {
+         route: {
+           select: {
+             origin: true,
+             destination: true,
+             name: true,
+             ~~~~
+             distance: true,
+             duration: true,
+             baseFare: true,
+     ?       id?: true,
+     ?       companyId?: true,
+     ?       routeCode?: true,
+     ?       tollCost?: true,
+     ?       fuelEstimate?: true,
+     ?       isActive?: true,
+     ?       createdAt?: true,
+     ?       updatedAt?: true,
+     ?       company?: true,
+     ?       stops?: true,
+     ?       trips?: true,
+     ?       pricingRules?: true,
+     ?       _count?: true
+           }
+         },
+         vehicle: {
+           select: {
+             vehicleCode: true,
+             vehicleNumber: true,
+             model: true,
+             seatingCapacity: true
+           }
+         },
+         crew: {
+           include: {
+             driver: {
+               include: {
+                 employee: {
+                   select: {
+                     firstName: true,
+                     lastName: true,
+                     phone: true
+                   }
+                 }
+               }
+             }
+           }
+         }
+       }
+     })
+
+Unknown field `name` for select statement on model `Route`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/trips/route.ts:14:37)
+    at async GET (src/app/api/v1/trips/route.ts:14:19)
+  12 |     }
+  13 |
+> 14 |     const trips = await prisma.trip.findMany({
+     |                                     ^
+  15 |       where,
+  16 |       take: 60,
+  17 |       orderBy: { scheduledDeparture: "desc" }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/trips 500 in 34ms (next.js: 7ms, proxy.ts: 9ms, application-code: 18ms)
+Routes API error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].route.findMany()` invocation in
+/Users/karthik/Desktop/Antigravity/National travels/lansub-travel-os/.next/dev/server/chunks/[root-of-the-server]__01946et._.js:80:161
+
+  77 ;
+  78 async function GET() {
+  79     try {
+→ 80         const routes = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$db$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].route.findMany({
+               where: {
+                 isActive: true
+               },
+               include: {
+                 stops: {
+                   orderBy: {
+                     stopOrder: "asc",
+                     ~~~~~~~~~
+             ?       id?: SortOrder,
+             ?       routeId?: SortOrder,
+             ?       stopName?: SortOrder,
+             ?       stopType?: SortOrder,
+             ?       sequence?: SortOrder,
+             ?       city?: SortOrder,
+             ?       latitude?: SortOrder | SortOrderInput,
+             ?       longitude?: SortOrder | SortOrderInput,
+             ?       arrivalTime?: SortOrder | SortOrderInput,
+             ?       isActive?: SortOrder,
+             ?       createdAt?: SortOrder,
+             ?       updatedAt?: SortOrder,
+             ?       route?: RouteOrderByWithRelationInput
+                   }
+                 },
+                 _count: {
+                   select: {
+                     trips: true
+                   }
+                 }
+               }
+             })
+
+Unknown argument `stopOrder`. Available options are marked with ?.
+    at <unknown> (src/app/api/v1/routes/route.ts:6:39)
+    at async GET (src/app/api/v1/routes/route.ts:6:20)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const routes = await prisma.route.findMany({
+    |                                       ^
+  7 |       where: { isActive: true },
+  8 |       include: {
+  9 |         stops: { orderBy: { stopOrder: "asc" } }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/routes 500 in 9ms (next.js: 2ms, proxy.ts: 2.0ms, application-code: 5ms)
+ GET /api/v1/dashboard 200 in 74ms (next.js: 10ms, proxy.ts: 12ms, application-code: 52ms)
+ GET /api/v1/vehicles 200 in 10ms (next.js: 1.9ms, proxy.ts: 1.2ms, application-code: 6ms)
+Trips API error: Error [PrismaClientValidationError]: 
+Invalid `prisma.trip.findMany()` invocation:
+
+{
+  where: {},
+  take: 60,
+  orderBy: {
+    scheduledDeparture: "desc"
+  },
+  include: {
+    route: {
+      select: {
+        routeCode: true,
+        origin: true,
+        destination: true,
+        distance: true,
+        duration: true,
+        tollCost: true
+      }
+    },
+    vehicle: {
+      select: {
+        vehicleCode: true,
+        vehicleNumber: true,
+        model: true,
+        seatingCapacity: true
+      }
+    },
+    crew: {
+      include: {
+        driver: {
+          include: {
+            employee: {
+              select: {
+                firstName: true,
+                ~~~~~~~~~
+                lastName: true,
+                phone: true,
+?               id?: true,
+?               companyId?: true,
+?               employeeCode?: true,
+?               name?: true,
+?               email?: true,
+?               address?: true,
+?               city?: true,
+?               dateOfBirth?: true,
+?               joiningDate?: true,
+?               department?: true,
+?               designation?: true,
+?               employeeType?: true,
+?               status?: true,
+?               salary?: true,
+?               bankAccount?: true,
+?               ifscCode?: true,
+?               emergencyContact?: true,
+?               emergencyPhone?: true,
+?               createdAt?: true,
+?               updatedAt?: true,
+?               deletedAt?: true,
+?               company?: true,
+?               user?: true,
+?               driver?: true,
+?               documents?: true,
+?               attendances?: true,
+?               leaves?: true,
+?               _count?: true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+Unknown field `firstName` for select statement on model `Employee`. Available options are marked with ?.
+    at async GET (src/app/api/v1/trips/route.ts:14:19)
+  12 |     }
+  13 |
+> 14 |     const trips = await prisma.trip.findMany({
+     |                   ^
+  15 |       where,
+  16 |       take: 60,
+  17 |       orderBy: { scheduledDeparture: "desc" }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/trips 500 in 17ms (next.js: 6ms, proxy.ts: 1.3ms, application-code: 9ms)
+ GET /api/v1/bookings 200 in 25ms (next.js: 4ms, proxy.ts: 1.3ms, application-code: 19ms)
+ GET /api/v1/routes 200 in 10ms (next.js: 3ms, proxy.ts: 1.1ms, application-code: 5ms)
+Drivers API error: Error [PrismaClientValidationError]: 
+Invalid `prisma.driver.findMany()` invocation:
+
+{
+  take: 100,
+  include: {
+    employee: {
+      select: {
+        id: true,
+        employeeCode: true,
+        firstName: true,
+        ~~~~~~~~~
+        lastName: true,
+        phone: true,
+        email: true,
+        status: true,
+        branch: {
+          select: {
+            name: true
+          }
+        },
+?       companyId?: true,
+?       name?: true,
+?       address?: true,
+?       city?: true,
+?       dateOfBirth?: true,
+?       joiningDate?: true,
+?       department?: true,
+?       designation?: true,
+?       employeeType?: true,
+?       salary?: true,
+?       bankAccount?: true,
+?       ifscCode?: true,
+?       emergencyContact?: true,
+?       emergencyPhone?: true,
+?       createdAt?: true,
+?       updatedAt?: true,
+?       deletedAt?: true,
+?       company?: true,
+?       user?: true,
+?       driver?: true,
+?       documents?: true,
+?       attendances?: true,
+?       leaves?: true,
+?       _count?: true
+      }
+    },
+    _count: {
+      select: {
+        tripCrews: true
+      }
+    }
+  }
+}
+
+Unknown field `firstName` for select statement on model `Employee`. Available options are marked with ?.
+    at async GET (src/app/api/v1/drivers/route.ts:6:21)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const drivers = await prisma.driver.findMany({
+    |                     ^
+  7 |       take: 100,
+  8 |       include: {
+  9 |         employee: { {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/drivers 500 in 10ms (next.js: 2ms, proxy.ts: 1.6ms, application-code: 6ms)
+ GET /api/v1/maintenance 200 in 8ms (next.js: 2ms, proxy.ts: 1.0ms, application-code: 5ms)
+ GET /api/v1/alerts 200 in 16ms (next.js: 12ms, proxy.ts: 1.0ms, application-code: 2ms)
+Trips API error: Error [PrismaClientValidationError]: 
+Invalid `prisma.trip.findMany()` invocation:
+
+{
+  where: {},
+  take: 60,
+  orderBy: {
+    scheduledDeparture: "desc"
+  },
+  include: {
+    route: {
+      select: {
+        routeCode: true,
+        origin: true,
+        destination: true,
+        distance: true,
+        duration: true,
+        tollCost: true
+      }
+    },
+    vehicle: {
+      select: {
+        vehicleCode: true,
+        vehicleNumber: true,
+        model: true,
+        seatingCapacity: true
+      }
+    },
+    crew: {
+      include: {
+        driver: {
+          include: {
+            employee: {
+              select: {
+                firstName: true,
+                ~~~~~~~~~
+                lastName: true,
+                phone: true,
+?               id?: true,
+?               companyId?: true,
+?               employeeCode?: true,
+?               name?: true,
+?               email?: true,
+?               address?: true,
+?               city?: true,
+?               dateOfBirth?: true,
+?               joiningDate?: true,
+?               department?: true,
+?               designation?: true,
+?               employeeType?: true,
+?               status?: true,
+?               salary?: true,
+?               bankAccount?: true,
+?               ifscCode?: true,
+?               emergencyContact?: true,
+?               emergencyPhone?: true,
+?               createdAt?: true,
+?               updatedAt?: true,
+?               deletedAt?: true,
+?               company?: true,
+?               user?: true,
+?               driver?: true,
+?               documents?: true,
+?               attendances?: true,
+?               leaves?: true,
+?               _count?: true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+Unknown field `firstName` for select statement on model `Employee`. Available options are marked with ?.
+    at async GET (src/app/api/v1/trips/route.ts:14:19)
+  12 |     }
+  13 |
+> 14 |     const trips = await prisma.trip.findMany({
+     |                   ^
+  15 |       where,
+  16 |       take: 60,
+  17 |       orderBy: { scheduledDeparture: "desc" }, {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/trips 500 in 8ms (next.js: 1.4ms, proxy.ts: 1.5ms, application-code: 5ms)
+Drivers API error: Error [PrismaClientValidationError]: 
+Invalid `prisma.driver.findMany()` invocation:
+
+{
+  take: 100,
+  include: {
+    employee: {
+      select: {
+        id: true,
+        employeeCode: true,
+        firstName: true,
+        ~~~~~~~~~
+        lastName: true,
+        phone: true,
+        email: true,
+        status: true,
+        branch: {
+          select: {
+            name: true
+          }
+        },
+?       companyId?: true,
+?       name?: true,
+?       address?: true,
+?       city?: true,
+?       dateOfBirth?: true,
+?       joiningDate?: true,
+?       department?: true,
+?       designation?: true,
+?       employeeType?: true,
+?       salary?: true,
+?       bankAccount?: true,
+?       ifscCode?: true,
+?       emergencyContact?: true,
+?       emergencyPhone?: true,
+?       createdAt?: true,
+?       updatedAt?: true,
+?       deletedAt?: true,
+?       company?: true,
+?       user?: true,
+?       driver?: true,
+?       documents?: true,
+?       attendances?: true,
+?       leaves?: true,
+?       _count?: true
+      }
+    },
+    _count: {
+      select: {
+        tripCrews: true
+      }
+    }
+  }
+}
+
+Unknown field `firstName` for select statement on model `Employee`. Available options are marked with ?.
+    at async GET (src/app/api/v1/drivers/route.ts:6:21)
+  4 | export async function GET() {
+  5 |   try {
+> 6 |     const drivers = await prisma.driver.findMany({
+    |                     ^
+  7 |       take: 100,
+  8 |       include: {
+  9 |         employee: { {
+  clientVersion: '7.10.0'
+}
+ GET /api/v1/drivers 500 in 5ms (next.js: 0.9ms, proxy.ts: 1.3ms, application-code: 3ms)
+ GET /api/v1/dashboard 200 in 83ms (next.js: 9ms, proxy.ts: 7ms, application-code: 67ms)
+ GET /api/v1/vehicles 200 in 7ms (next.js: 1.7ms, proxy.ts: 1.2ms, application-code: 4ms)
+ GET /api/v1/trips 200 in 14ms (next.js: 3ms, proxy.ts: 1.0ms, application-code: 10ms)
+ GET /api/v1/bookings 200 in 10ms (next.js: 1.5ms, proxy.ts: 1.1ms, application-code: 7ms)
+ GET /api/v1/routes 200 in 9ms (next.js: 2ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/v1/drivers 200 in 28ms (next.js: 22ms, proxy.ts: 1.7ms, application-code: 5ms)
+ GET /api/v1/maintenance 200 in 6ms (next.js: 1.3ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /api/v1/alerts 200 in 5ms (next.js: 1.4ms, proxy.ts: 1.0ms, application-code: 2ms)
+ GET /login 200 in 607ms (next.js: 335ms, proxy.ts: 44ms, application-code: 229ms)
+ GET /api/auth/providers 200 in 1303ms (next.js: 1259ms, proxy.ts: 21ms, application-code: 23ms)
+ GET /api/auth/csrf 200 in 17ms (next.js: 10ms, proxy.ts: 2ms, application-code: 5ms)
+ POST /api/auth/callback/credentials? 200 in 103ms (next.js: 3ms, proxy.ts: 4ms, application-code: 95ms)
+ GET /dashboard 200 in 766ms (next.js: 749ms, proxy.ts: 6ms, application-code: 11ms)
+ GET /dashboard 200 in 39ms (next.js: 16ms, proxy.ts: 8ms, application-code: 15ms)
+ GET /api/v1/dashboard 200 in 90ms (next.js: 27ms, proxy.ts: 5ms, application-code: 57ms)
+ GET /api/auth/session 200 in 103ms (next.js: 87ms, proxy.ts: 2ms, application-code: 14ms)
+ GET /api/v1/dashboard 200 in 34ms (next.js: 5ms, proxy.ts: 1.2ms, application-code: 27ms)
+ GET /api/auth/session 200 in 43ms (next.js: 36ms, proxy.ts: 1.1ms, application-code: 6ms)
+ GET /api/auth/session 200 in 28ms (next.js: 14ms, proxy.ts: 5ms, application-code: 9ms)
+ GET /api/auth/session 200 in 10ms (next.js: 2ms, proxy.ts: 1.8ms, application-code: 6ms)
+ GET /command-centre 200 in 1057ms (next.js: 913ms, proxy.ts: 22ms, application-code: 121ms)
+ GET /api/v1/gps/vehicles 200 in 115ms (next.js: 88ms, proxy.ts: 4ms, application-code: 24ms)
+ GET /api/v1/gps/vehicles 200 in 25ms (next.js: 2ms, proxy.ts: 4ms, application-code: 19ms)
+ GET /api/auth/session 200 in 130ms (next.js: 77ms, proxy.ts: 1.4ms, application-code: 52ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SegmentViewNode type="page" pagePath="command-ce...">
+      <SegmentTrieNode>
+      <ClientPageRoot Component={function CommandCentrePage} serverProvidedParams={{...}}>
+        <CommandCentrePage params={Promise} searchParams={Promise}>
+          <SessionProvider>
+            <AdminLayout>
+              <div className="flex h-scr...">
+                <div>
+                <div className="flex-1 fle...">
+                  <TopBar>
+                  <main className="flex-1 ove...">
+                    <CommandCentreContent>
+                      <div className="flex flex-...">
+                        <div className="flex items...">
+                          <div className="flex items...">
+                            <span>
+                            <span>
+                            <span className="px-2 py-0.5 bg-slate-100 rounded text-slate-600 text-[11px] font-mono">
++                             2:19:32 pm
+-                             2:19:25 pm
+                          ...
+                        ...
+    ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at span (<anonymous>)
+    at CommandCentreContent (src/app/command-centre/page.tsx:266:11)
+    at CommandCentrePage (src/app/command-centre/page.tsx:431:9)
+  264 |             Live Fleet Control Room
+  265 |           </span>
+> 266 |           <span className="px-2 py-0.5 bg-slate-100 rounded text-slate-600 text-[11px] font-mono">
+      |           ^
+  267 |             {lastUpdate.toLocaleTimeString("en-IN")}
+  268 |           </span>
+  269 |         </div>
+ GET /api/auth/session 200 in 27ms (next.js: 16ms, proxy.ts: 1.5ms, application-code: 9ms)
+ GET /api/auth/session 200 in 41ms (next.js: 11ms, proxy.ts: 12ms, application-code: 18ms)
+ GET /api/auth/session 200 in 10ms (next.js: 3ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/v1/gps/vehicles 200 in 41ms (next.js: 8ms, proxy.ts: 15ms, application-code: 18ms)
+ GET /api/v1/gps/vehicles 200 in 40ms (next.js: 6ms, proxy.ts: 8ms, application-code: 26ms)
+ GET /api/v1/gps/vehicles 200 in 49ms (next.js: 20ms, proxy.ts: 14ms, application-code: 15ms)
+ GET /api/v1/gps/vehicles 200 in 49ms (next.js: 9ms, proxy.ts: 16ms, application-code: 24ms)
+ GET /fleet 200 in 936ms (next.js: 862ms, proxy.ts: 11ms, application-code: 63ms)
+ GET /api/v1/vehicles 200 in 47ms (next.js: 14ms, proxy.ts: 19ms, application-code: 15ms)
+ GET /api/auth/session 200 in 50ms (next.js: 32ms, proxy.ts: 2ms, application-code: 16ms)
+ GET /api/v1/vehicles 200 in 9ms (next.js: 1.9ms, proxy.ts: 2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 14ms (next.js: 8ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 42ms (next.js: 24ms, proxy.ts: 5ms, application-code: 13ms)
+ GET /api/auth/session 200 in 24ms (next.js: 14ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /trips 200 in 855ms (next.js: 756ms, proxy.ts: 22ms, application-code: 78ms)
+ GET /api/v1/trips 200 in 36ms (next.js: 10ms, proxy.ts: 6ms, application-code: 20ms)
+ GET /api/auth/session 200 in 25ms (next.js: 9ms, proxy.ts: 2ms, application-code: 14ms)
+ GET /api/v1/trips 200 in 10ms (next.js: 2ms, proxy.ts: 1.2ms, application-code: 6ms)
+ GET /api/auth/session 200 in 14ms (next.js: 2ms, proxy.ts: 9ms, application-code: 3ms)
+ GET /api/auth/session 200 in 37ms (next.js: 12ms, proxy.ts: 13ms, application-code: 12ms)
+ GET /api/auth/session 200 in 27ms (next.js: 13ms, proxy.ts: 5ms, application-code: 9ms)
+ GET /bookings 200 in 536ms (next.js: 432ms, proxy.ts: 6ms, application-code: 98ms)
+ GET /api/v1/bookings 200 in 57ms (next.js: 31ms, proxy.ts: 8ms, application-code: 19ms)
+ GET /api/auth/session 200 in 30ms (next.js: 13ms, proxy.ts: 1.0ms, application-code: 16ms)
+ GET /api/v1/bookings 200 in 11ms (next.js: 2ms, proxy.ts: 1.5ms, application-code: 7ms)
+ GET /api/auth/session 200 in 21ms (next.js: 10ms, proxy.ts: 0.9ms, application-code: 10ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.5ms, proxy.ts: 1.6ms, application-code: 3ms)
+ GET /api/auth/session 200 in 7ms (next.js: 3ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /ai-copilot 200 in 973ms (next.js: 861ms, proxy.ts: 17ms, application-code: 95ms)
+ GET /api/auth/session 200 in 60ms (next.js: 22ms, proxy.ts: 13ms, application-code: 25ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2ms, proxy.ts: 1.1ms, application-code: 4ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1.6ms, proxy.ts: 1.2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 6ms (next.js: 2ms, proxy.ts: 1.0ms, application-code: 3ms)
+ GET /dashboard 200 in 203ms (next.js: 125ms, proxy.ts: 30ms, application-code: 48ms)
+ GET /api/v1/dashboard 200 in 84ms (next.js: 23ms, proxy.ts: 13ms, application-code: 48ms)
+ GET /api/v1/dashboard 200 in 23ms (next.js: 2ms, proxy.ts: 1.5ms, application-code: 19ms)
+ GET /api/auth/session 200 in 103ms (next.js: 14ms, proxy.ts: 5ms, application-code: 84ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1.6ms, proxy.ts: 1.4ms, application-code: 5ms)
+ GET /api/auth/session 200 in 10ms (next.js: 3ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 11ms (next.js: 5ms, proxy.ts: 1.2ms, application-code: 5ms)
+ GET /command-centre 200 in 70ms (next.js: 47ms, proxy.ts: 8ms, application-code: 15ms)
+ GET /api/v1/gps/vehicles 200 in 30ms (next.js: 18ms, proxy.ts: 3ms, application-code: 8ms)
+ GET /api/auth/session 200 in 32ms (next.js: 10ms, proxy.ts: 3ms, application-code: 19ms)
+ GET /api/v1/gps/vehicles 200 in 15ms (next.js: 4ms, proxy.ts: 3ms, application-code: 8ms)
+ GET /api/auth/session 200 in 21ms (next.js: 13ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/auth/session 200 in 28ms (next.js: 9ms, proxy.ts: 9ms, application-code: 10ms)
+ GET /api/auth/session 200 in 27ms (next.js: 4ms, proxy.ts: 3ms, application-code: 21ms)
+ GET /trips 200 in 58ms (next.js: 40ms, proxy.ts: 4ms, application-code: 14ms)
+ GET /api/auth/session 200 in 17ms (next.js: 5ms, proxy.ts: 7ms, application-code: 5ms)
+ GET /api/v1/trips 200 in 31ms (next.js: 19ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/v1/trips 200 in 24ms (next.js: 6ms, proxy.ts: 1.1ms, application-code: 17ms)
+ GET /api/auth/session 200 in 46ms (next.js: 26ms, proxy.ts: 15ms, application-code: 6ms)
+ GET /api/auth/session 200 in 16ms (next.js: 3ms, proxy.ts: 1.2ms, application-code: 11ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 1.3ms, application-code: 5ms)
+ GET /fleet 200 in 51ms (next.js: 33ms, proxy.ts: 7ms, application-code: 12ms)
+ GET /api/v1/vehicles 200 in 23ms (next.js: 14ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/auth/session 200 in 27ms (next.js: 9ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /api/v1/vehicles 200 in 18ms (next.js: 12ms, proxy.ts: 1.2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 20ms (next.js: 13ms, proxy.ts: 1.4ms, application-code: 5ms)
+ GET /api/auth/session 200 in 14ms (next.js: 9ms, proxy.ts: 1.6ms, application-code: 3ms)
+ GET /api/auth/session 200 in 10ms (next.js: 2ms, proxy.ts: 1.1ms, application-code: 6ms)
+ GET /bookings 200 in 70ms (next.js: 32ms, proxy.ts: 10ms, application-code: 27ms)
+ GET /api/v1/bookings 200 in 35ms (next.js: 18ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/v1/bookings 200 in 13ms (next.js: 1.6ms, proxy.ts: 1.3ms, application-code: 10ms)
+ GET /api/auth/session 200 in 52ms (next.js: 10ms, proxy.ts: 4ms, application-code: 38ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 1.3ms, application-code: 5ms)
+ GET /api/auth/session 200 in 10ms (next.js: 1.9ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/auth/session 200 in 16ms (next.js: 8ms, proxy.ts: 1.7ms, application-code: 6ms)
+ GET /routes 200 in 934ms (next.js: 910ms, proxy.ts: 10ms, application-code: 14ms)
+ GET /api/v1/routes 200 in 25ms (next.js: 6ms, proxy.ts: 12ms, application-code: 7ms)
+ GET /api/v1/routes 200 in 10ms (next.js: 6ms, proxy.ts: 1.3ms, application-code: 2ms)
+ GET /api/auth/session 200 in 38ms (next.js: 17ms, proxy.ts: 12ms, application-code: 10ms)
+ GET /api/auth/session 200 in 7ms (next.js: 3ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /api/auth/session 200 in 27ms (next.js: 4ms, proxy.ts: 1.9ms, application-code: 20ms)
+ GET /api/auth/session 200 in 24ms (next.js: 6ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /drivers 200 in 501ms (next.js: 477ms, proxy.ts: 10ms, application-code: 13ms)
+ GET /api/v1/drivers 200 in 27ms (next.js: 15ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/v1/drivers 200 in 9ms (next.js: 3ms, proxy.ts: 1.4ms, application-code: 5ms)
+ GET /api/auth/session 200 in 40ms (next.js: 8ms, proxy.ts: 5ms, application-code: 27ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 1.5ms, application-code: 4ms)
+ GET /api/auth/session 200 in 10ms (next.js: 3ms, proxy.ts: 1.2ms, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.5ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /ai-copilot 200 in 61ms (next.js: 23ms, proxy.ts: 14ms, application-code: 24ms)
+ GET /api/auth/session 200 in 31ms (next.js: 18ms, proxy.ts: 6ms, application-code: 7ms)
+ GET /api/auth/session 200 in 14ms (next.js: 3ms, proxy.ts: 2ms, application-code: 9ms)
+ GET /api/auth/session 200 in 11ms (next.js: 2ms, proxy.ts: 1.8ms, application-code: 7ms)
+ GET /api/auth/session 200 in 10ms (next.js: 3ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /alerts 200 in 242ms (next.js: 226ms, proxy.ts: 6ms, application-code: 10ms)
+ GET /api/v1/alerts 200 in 20ms (next.js: 7ms, proxy.ts: 7ms, application-code: 6ms)
+ GET /api/v1/alerts 200 in 13ms (next.js: 2ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /api/auth/session 200 in 47ms (next.js: 13ms, proxy.ts: 8ms, application-code: 25ms)
+ GET /api/auth/session 200 in 22ms (next.js: 3ms, proxy.ts: 1.6ms, application-code: 18ms)
+ GET /api/auth/session 200 in 15ms (next.js: 3ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /api/auth/session 200 in 10ms (next.js: 2ms, proxy.ts: 4ms, application-code: 3ms)
+ GET /complaints 200 in 214ms (next.js: 199ms, proxy.ts: 3ms, application-code: 11ms)
+ GET /api/auth/session 200 in 13ms (next.js: 7ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 17ms (next.js: 3ms, proxy.ts: 5ms, application-code: 8ms)
+ GET /api/auth/session 200 in 13ms (next.js: 5ms, proxy.ts: 4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 11ms (next.js: 3ms, proxy.ts: 1.2ms, application-code: 7ms)
+ GET /dashboard 200 in 42ms (next.js: 15ms, proxy.ts: 5ms, application-code: 22ms)
+ GET /api/v1/dashboard 200 in 47ms (next.js: 14ms, proxy.ts: 3ms, application-code: 30ms)
+ GET /api/v1/dashboard 200 in 73ms (next.js: 9ms, proxy.ts: 5ms, application-code: 59ms)
+ GET /api/auth/session 200 in 141ms (next.js: 9ms, proxy.ts: 3ms, application-code: 129ms)
+ GET /api/auth/session 200 in 32ms (next.js: 24ms, proxy.ts: 4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 1.9ms, application-code: 4ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.6ms, proxy.ts: 1.5ms, application-code: 3ms)
+ GET /api/auth/session 200 in 282ms (next.js: 198ms, proxy.ts: 47ms, application-code: 37ms)
+ GET /api/auth/session 200 in 10ms (next.js: 2ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /command-centre 200 in 78ms (next.js: 55ms, proxy.ts: 5ms, application-code: 18ms)
+ GET /api/v1/gps/vehicles 200 in 47ms (next.js: 20ms, proxy.ts: 3ms, application-code: 23ms)
+ GET /api/v1/gps/vehicles 200 in 16ms (next.js: 3ms, proxy.ts: 1.6ms, application-code: 11ms)
+ GET /api/auth/session 200 in 66ms (next.js: 8ms, proxy.ts: 5ms, application-code: 53ms)
+ GET /api/auth/session 200 in 16ms (next.js: 9ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 14ms (next.js: 2ms, proxy.ts: 1.9ms, application-code: 9ms)
+ GET /api/auth/session 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/v1/gps/vehicles 200 in 60ms (next.js: 26ms, proxy.ts: 9ms, application-code: 25ms)
+ GET /api/v1/gps/vehicles 200 in 43ms (next.js: 18ms, proxy.ts: 7ms, application-code: 19ms)
+ GET /api/v1/gps/vehicles 200 in 38ms (next.js: 11ms, proxy.ts: 10ms, application-code: 17ms)
+ GET /api/v1/gps/vehicles 200 in 29ms (next.js: 8ms, proxy.ts: 6ms, application-code: 15ms)
+ GET /api/v1/gps/vehicles 200 in 27ms (next.js: 5ms, proxy.ts: 4ms, application-code: 19ms)
+ GET /api/v1/gps/vehicles 200 in 24ms (next.js: 5ms, proxy.ts: 3ms, application-code: 16ms)
+ GET /api/v1/gps/vehicles 200 in 31ms (next.js: 11ms, proxy.ts: 5ms, application-code: 15ms)
+ GET /api/v1/gps/vehicles 200 in 25ms (next.js: 4ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /api/v1/gps/vehicles 200 in 23ms (next.js: 4ms, proxy.ts: 7ms, application-code: 11ms)
+ GET /dashboard 200 in 108ms (next.js: 85ms, proxy.ts: 4ms, application-code: 18ms)
+ GET /api/v1/dashboard 200 in 65ms (next.js: 22ms, proxy.ts: 2ms, application-code: 40ms)
+ GET /api/v1/dashboard 200 in 77ms (next.js: 5ms, proxy.ts: 3ms, application-code: 68ms)
+ GET /api/auth/session 200 in 154ms (next.js: 10ms, proxy.ts: 2ms, application-code: 141ms)
+ GET /api/auth/session 200 in 33ms (next.js: 5ms, proxy.ts: 4ms, application-code: 24ms)
+ GET /api/auth/session 200 in 15ms (next.js: 2ms, proxy.ts: 1.1ms, application-code: 11ms)
+ GET /api/auth/session 200 in 10ms (next.js: 4ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /fleet 200 in 45ms (next.js: 30ms, proxy.ts: 3ms, application-code: 12ms)
+ GET /api/auth/session 200 in 15ms (next.js: 4ms, proxy.ts: 6ms, application-code: 4ms)
+ GET /api/v1/vehicles 200 in 23ms (next.js: 15ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/v1/vehicles 200 in 9ms (next.js: 2ms, proxy.ts: 1.8ms, application-code: 5ms)
+ GET /api/auth/session 200 in 15ms (next.js: 9ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 20ms (next.js: 3ms, proxy.ts: 1.6ms, application-code: 16ms)
+ GET /bookings 200 in 50ms (next.js: 32ms, proxy.ts: 4ms, application-code: 14ms)
+ GET /api/v1/bookings 200 in 21ms (next.js: 10ms, proxy.ts: 3ms, application-code: 9ms)
+ GET /api/v1/bookings 200 in 10ms (next.js: 1.6ms, proxy.ts: 1.5ms, application-code: 7ms)
+ GET /api/auth/session 200 in 37ms (next.js: 5ms, proxy.ts: 3ms, application-code: 28ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.7ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /api/auth/session 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2ms, proxy.ts: 1.4ms, application-code: 3ms)
+ GET /drivers 200 in 111ms (next.js: 83ms, proxy.ts: 12ms, application-code: 16ms)
+ GET /api/v1/drivers 200 in 26ms (next.js: 15ms, proxy.ts: 2ms, application-code: 9ms)
+ GET /api/v1/drivers 200 in 16ms (next.js: 2ms, proxy.ts: 2ms, application-code: 11ms)
+ GET /api/auth/session 200 in 64ms (next.js: 8ms, proxy.ts: 1.7ms, application-code: 54ms)
+ GET /api/auth/session 200 in 11ms (next.js: 2ms, proxy.ts: 1.5ms, application-code: 7ms)
+ GET /api/auth/session 200 in 15ms (next.js: 4ms, proxy.ts: 1.5ms, application-code: 10ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 3ms, application-code: 3ms)
+ GET /routes 200 in 54ms (next.js: 33ms, proxy.ts: 7ms, application-code: 14ms)
+ GET /api/v1/routes 200 in 15ms (next.js: 8ms, proxy.ts: 3ms, application-code: 3ms)
+ GET /api/v1/routes 200 in 7ms (next.js: 1.9ms, proxy.ts: 1.3ms, application-code: 3ms)
+ GET /api/auth/session 200 in 23ms (next.js: 4ms, proxy.ts: 4ms, application-code: 16ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1.8ms, proxy.ts: 1.3ms, application-code: 3ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 1.4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 17ms (next.js: 1.8ms, proxy.ts: 1.5ms, application-code: 14ms)
+ GET /ai-copilot 200 in 32ms (next.js: 11ms, proxy.ts: 8ms, application-code: 13ms)
+ GET /api/auth/session 200 in 11ms (next.js: 4ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 10ms (next.js: 2ms, proxy.ts: 1.3ms, application-code: 7ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2ms, proxy.ts: 1.6ms, application-code: 3ms)
+ GET /api/auth/session 200 in 8ms (next.js: 4ms, proxy.ts: 1.1ms, application-code: 4ms)
+ GET /alerts 200 in 70ms (next.js: 57ms, proxy.ts: 4ms, application-code: 9ms)
+ GET /api/v1/alerts 200 in 17ms (next.js: 10ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /api/v1/alerts 200 in 6ms (next.js: 1.6ms, proxy.ts: 1.3ms, application-code: 3ms)
+ GET /api/auth/session 200 in 28ms (next.js: 6ms, proxy.ts: 4ms, application-code: 18ms)
+ GET /api/auth/session 200 in 6ms (next.js: 2ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /api/auth/session 200 in 17ms (next.js: 5ms, proxy.ts: 8ms, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.8ms, proxy.ts: 1.3ms, application-code: 3ms)
+ GET /complaints 200 in 59ms (next.js: 45ms, proxy.ts: 5ms, application-code: 9ms)
+ GET /api/auth/session 200 in 18ms (next.js: 12ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 19ms (next.js: 14ms, proxy.ts: 1.4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.6ms, proxy.ts: 1.2ms, application-code: 3ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1.8ms, proxy.ts: 1.4ms, application-code: 3ms)
+ GET /api/auth/csrf 200 in 29ms (next.js: 13ms, proxy.ts: 10ms, application-code: 6ms)
+ POST /api/auth/signout 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /login 200 in 45ms (next.js: 8ms, proxy.ts: 1.6ms, application-code: 35ms)
+ GET /api/auth/providers 200 in 22ms (next.js: 9ms, proxy.ts: 7ms, application-code: 5ms)
+ GET /api/auth/csrf 200 in 9ms (next.js: 4ms, proxy.ts: 2ms, application-code: 3ms)
+ POST /api/auth/callback/credentials? 200 in 78ms (next.js: 2ms, proxy.ts: 1.8ms, application-code: 73ms)
+ GET /dashboard 200 in 26ms (next.js: 3ms, proxy.ts: 1.4ms, application-code: 21ms)
+ GET /dashboard 200 in 18ms (next.js: 5ms, proxy.ts: 1.7ms, application-code: 11ms)
+ GET /api/v1/dashboard 200 in 66ms (next.js: 35ms, proxy.ts: 4ms, application-code: 27ms)
+ GET /api/v1/dashboard 200 in 29ms (next.js: 7ms, proxy.ts: 1.3ms, application-code: 21ms)
+ GET /api/auth/session 200 in 97ms (next.js: 33ms, proxy.ts: 4ms, application-code: 61ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 1.1ms, application-code: 5ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1.9ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 12ms (next.js: 2ms, proxy.ts: 1.4ms, application-code: 8ms)
+ GET /command-centre 200 in 38ms (next.js: 16ms, proxy.ts: 11ms, application-code: 11ms)
+ GET /api/v1/gps/vehicles 200 in 38ms (next.js: 25ms, proxy.ts: 4ms, application-code: 9ms)
+ GET /api/v1/gps/vehicles 200 in 9ms (next.js: 1.9ms, proxy.ts: 2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 50ms (next.js: 15ms, proxy.ts: 6ms, application-code: 30ms)
+ GET /api/auth/session 200 in 75ms (next.js: 41ms, proxy.ts: 1.8ms, application-code: 33ms)
+ GET /api/auth/session 200 in 23ms (next.js: 9ms, proxy.ts: 4ms, application-code: 10ms)
+ GET /api/auth/session 200 in 19ms (next.js: 5ms, proxy.ts: 2.0ms, application-code: 12ms)
+ GET /trips 200 in 48ms (next.js: 34ms, proxy.ts: 4ms, application-code: 10ms)
+ GET /api/v1/trips 200 in 21ms (next.js: 9ms, proxy.ts: 6ms, application-code: 7ms)
+ GET /api/v1/trips 200 in 11ms (next.js: 1.7ms, proxy.ts: 1.4ms, application-code: 8ms)
+ GET /api/auth/session 200 in 35ms (next.js: 5ms, proxy.ts: 6ms, application-code: 24ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1.9ms, proxy.ts: 1.3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1.6ms, proxy.ts: 1.4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 11ms (next.js: 5ms, proxy.ts: 3ms, application-code: 3ms)
+ GET /fleet 200 in 46ms (next.js: 20ms, proxy.ts: 7ms, application-code: 19ms)
+ GET /api/v1/vehicles 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/v1/vehicles 200 in 13ms (next.js: 6ms, proxy.ts: 1.9ms, application-code: 5ms)
+ GET /api/auth/session 200 in 33ms (next.js: 16ms, proxy.ts: 2ms, application-code: 14ms)
+ GET /api/auth/session 200 in 8ms (next.js: 3ms, proxy.ts: 1.2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 21ms (next.js: 9ms, proxy.ts: 1.4ms, application-code: 11ms)
+ GET /api/auth/session 200 in 18ms (next.js: 9ms, proxy.ts: 1.2ms, application-code: 7ms)
+ GET /hr 200 in 654ms (next.js: 631ms, proxy.ts: 10ms, application-code: 13ms)
+ GET /api/auth/session 200 in 27ms (next.js: 13ms, proxy.ts: 5ms, application-code: 8ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 2ms, application-code: 4ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2ms, proxy.ts: 2ms, application-code: 3ms)
+ GET /api/auth/session 200 in 11ms (next.js: 2ms, proxy.ts: 1.2ms, application-code: 8ms)
+ GET /customers 200 in 711ms (next.js: 686ms, proxy.ts: 12ms, application-code: 12ms)
+ GET /api/auth/session 200 in 29ms (next.js: 12ms, proxy.ts: 2ms, application-code: 15ms)
+ GET /api/auth/session 200 in 14ms (next.js: 6ms, proxy.ts: 1.3ms, application-code: 6ms)
+ GET /api/auth/session 200 in 8ms (next.js: 3ms, proxy.ts: 1.3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /analytics 200 in 527ms (next.js: 514ms, proxy.ts: 6ms, application-code: 7ms)
+ GET /api/auth/session 200 in 19ms (next.js: 7ms, proxy.ts: 8ms, application-code: 5ms)
+ GET /api/auth/session 200 in 16ms (next.js: 4ms, proxy.ts: 1.3ms, application-code: 11ms)
+ GET /api/auth/session 200 in 5ms (next.js: 1.5ms, proxy.ts: 1.1ms, application-code: 3ms)
+ GET /api/auth/session 200 in 7ms (next.js: 3ms, proxy.ts: 0.9ms, application-code: 3ms)
+ GET /finance 200 in 165ms (next.js: 153ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/auth/session 200 in 12ms (next.js: 5ms, proxy.ts: 2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2.0ms, proxy.ts: 3ms, application-code: 3ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 1.5ms, application-code: 5ms)
+ GET /api/auth/session 200 in 9ms (next.js: 2.0ms, proxy.ts: 1.3ms, application-code: 6ms)
+ GET /ai-copilot 200 in 66ms (next.js: 42ms, proxy.ts: 5ms, application-code: 19ms)
+ GET /api/auth/session 200 in 13ms (next.js: 5ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/auth/session 200 in 9ms (next.js: 2ms, proxy.ts: 3ms, application-code: 4ms)
+ GET /api/auth/session 200 in 10ms (next.js: 4ms, proxy.ts: 1.8ms, application-code: 4ms)
+ GET /api/auth/session 200 in 15ms (next.js: 5ms, proxy.ts: 1.4ms, application-code: 9ms)
+ GET /alerts 200 in 32ms (next.js: 8ms, proxy.ts: 11ms, application-code: 13ms)
+ GET /api/v1/alerts 200 in 14ms (next.js: 5ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/v1/alerts 200 in 11ms (next.js: 6ms, proxy.ts: 1.5ms, application-code: 3ms)
+ GET /api/auth/session 200 in 30ms (next.js: 14ms, proxy.ts: 4ms, application-code: 12ms)
+ GET /api/auth/session 200 in 14ms (next.js: 4ms, proxy.ts: 2ms, application-code: 8ms)
+ GET /api/auth/session 200 in 9ms (next.js: 3ms, proxy.ts: 1.9ms, application-code: 3ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1.8ms, proxy.ts: 1.3ms, application-code: 6ms)
+ GET /ai-copilot 200 in 54ms (next.js: 30ms, proxy.ts: 6ms, application-code: 19ms)
+ GET /api/auth/session 200 in 15ms (next.js: 5ms, proxy.ts: 2.0ms, application-code: 8ms)
+ GET /api/auth/session 200 in 9ms (next.js: 2ms, proxy.ts: 1.4ms, application-code: 5ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 1.4ms, application-code: 4ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, proxy.ts: 1.2ms, application-code: 4ms)
+ POST /api/v1/ai/query 200 in 396ms (next.js: 339ms, proxy.ts: 14ms, application-code: 43ms)
+ POST /api/v1/ai/query 200 in 55ms (next.js: 15ms, proxy.ts: 20ms, application-code: 20ms)
+ POST /api/v1/ai/query 200 in 37ms (next.js: 12ms, proxy.ts: 11ms, application-code: 13ms)
+ POST /api/v1/ai/query 200 in 26ms (next.js: 3ms, proxy.ts: 14ms, application-code: 9ms)
+ GET /dashboard 200 in 53ms (next.js: 22ms, proxy.ts: 7ms, application-code: 24ms)
+ GET /api/v1/dashboard 200 in 87ms (next.js: 30ms, proxy.ts: 2ms, application-code: 55ms)
+ GET /api/v1/dashboard 200 in 26ms (next.js: 1.7ms, proxy.ts: 1.5ms, application-code: 23ms)
+ GET /api/auth/session 200 in 112ms (next.js: 18ms, proxy.ts: 1.8ms, application-code: 93ms)
+ GET /api/auth/session 200 in 8ms (next.js: 3ms, proxy.ts: 1.5ms, application-code: 4ms)
+ GET /api/auth/session 200 in 17ms (next.js: 1.9ms, proxy.ts: 1.5ms, application-code: 13ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2.0ms, proxy.ts: 1.9ms, application-code: 3ms)
+ GET /api/auth/csrf 200 in 28ms (next.js: 12ms, proxy.ts: 6ms, application-code: 10ms)
+ POST /api/auth/signout 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /login 200 in 33ms (next.js: 4ms, proxy.ts: 5ms, application-code: 23ms)
+[?25h
