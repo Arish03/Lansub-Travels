@@ -11,8 +11,10 @@ services:
       # SQLite stored on the named volume
       DATABASE_URL: "file:/data/prod.db"
       # Auth — CHANGE THESE in production!
-      NEXTAUTH_SECRET: "${NEXTAUTH_SECRET}"
-      NEXTAUTH_URL: "${NEXTAUTH_URL:-http://localhost:2500}"
+      NEXTAUTH_SECRET: "${NEXTAUTH_SECRET:-lansub-travel-os-secret-key-prod-2026-supersecure}"
+      AUTH_SECRET: "${AUTH_SECRET:-lansub-travel-os-secret-key-prod-2026-supersecure}"
+      AUTH_TRUST_HOST: "true"
+      NEXTAUTH_URL: "${NEXTAUTH_URL:-http://98.70.44.251:2500}"
       NODE_ENV: "production"
       # App branding
       NEXT_PUBLIC_APP_NAME: "LANSUB TRAVEL OS"
