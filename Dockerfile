@@ -21,6 +21,9 @@ COPY . .
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Generate Prisma Client
+RUN npx prisma generate
+
 # Build the Next.js app
 RUN npm run build
 
@@ -48,6 +51,7 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
+COPY --from=builder /app/tsconfig.seed.json ./tsconfig.seed.json
 
 # Copy entrypoint script
 COPY docker-entrypoint.sh ./docker-entrypoint.sh

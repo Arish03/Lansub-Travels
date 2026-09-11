@@ -133,7 +133,7 @@ function useGpsSimulator(vehicles: VehiclePosition[], running: boolean) {
     return () => clearInterval(interval);
   }, [running, vehicles]);
 
-  return simRunning => running ? simVehicles : vehicles;
+  return running ? simVehicles : vehicles;
 }
 
 export default function MapView({ vehicles, selectedBusId, onBusClick, simRunning }: MapViewProps) {
