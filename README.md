@@ -241,7 +241,7 @@ docker build -t lansub-travel-os .
 
 # Run container with persistent SQLite volume
 docker run -d \
-  -p 3000:3000 \
+  -p 2500:3000 \
   -v $(pwd)/data:/app/prisma \
   --env-file .env \
   --name lansub-app \

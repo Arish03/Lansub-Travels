@@ -6,13 +6,13 @@ services:
     container_name: lansub-travel-os
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "2500:3000"
     environment:
       # SQLite stored on the named volume
       DATABASE_URL: "file:/data/prod.db"
       # Auth — CHANGE THESE in production!
       NEXTAUTH_SECRET: "${NEXTAUTH_SECRET}"
-      NEXTAUTH_URL: "${NEXTAUTH_URL:-http://localhost:3000}"
+      NEXTAUTH_URL: "${NEXTAUTH_URL:-http://localhost:2500}"
       NODE_ENV: "production"
       # App branding
       NEXT_PUBLIC_APP_NAME: "LANSUB TRAVEL OS"
