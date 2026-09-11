@@ -580,7 +580,7 @@ async function main() {
   // 6. ROUTES (20)
   // ============================================
   console.log("🗺️ Creating 20 routes...");
-  const routes = [];
+  const routes: { route: any; fares: number[] }[] = [];
 
   for (let i = 0; i < ROUTES_DATA.length; i++) {
     const rd = ROUTES_DATA[i];
@@ -830,7 +830,7 @@ async function main() {
 
       // Create bookings for completed/in-progress trips
       if (bookedSeats > 0 && dayOffset <= 0 && totalBookingsCreated < 2500) {
-        const basePrice = randomFrom(routeData.fares);
+        const basePrice: number = Number(randomFrom(routeData.fares));
         let ticketRevenue = 0;
         let commissionTotal = 0;
         const bookingsToCreate = Math.min(bookedSeats, 15); // limit per trip for seeding speed
